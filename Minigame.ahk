@@ -40,6 +40,7 @@ yContinue = 300
 ; yContinue = 560
 
 toSpiralDoor = 600 ;Edit this number if you are not making it to Bartleby when trying to refill potions
+loadTimeWait = 10000 ;Change this if you don't make it to minigame sigil. Your load times are longer than 10 seconds
 
 ; F12:: ;Don't use this it is for testing only
 
@@ -49,19 +50,19 @@ sleep %toSpiralDoor%
 Send {s up} 
 sleep 100
 Send x
-sleep 10000
+sleep %loadTimeWait%
 Send {Click %xWizCity%, %yWizCity%}
 sleep 5
 Send {Click %xToWorld%, %yToWorld%}
-sleep 10000
+sleep %loadTimeWait%
 Send {w Down}
 sleep 4000
 Send {w Up}
-sleep 10000
+sleep %loadTimeWait%
 Send {w Down}
 sleep 6000
 Send {w Up}
-sleep 10000
+sleep %loadTimeWait%
 Send {w Down}
 sleep 1500
 Send {w Up}
@@ -95,7 +96,7 @@ sleep 1000
 Send x
 sleep 1000
 Send {Click %xPotionMotion%, %yPotionMotion%}
-sleep 10000
+sleep %loadTimeWait%
 
 ;Play game to potion 4 times, NOTE: change loop number for more or less potions
 loop 4 {
@@ -126,7 +127,7 @@ loop 4 {
 }
 ;Exit game menu
 Send {Click %xCloseGame%, %yCloseGame%}
-sleep 5000
+sleep %loadTimeWait%
 exitapp
 
 F10::
