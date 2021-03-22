@@ -6,10 +6,10 @@
 #SingleInstance, Force
 
 ;1280x720 cursor positions        ;Must use 720p resolution
-xWizCity = 1750
-yWizCity = 460
-xToWorld = 1700
-yToWorld = 1230
+xWizCity = 1170
+yWizCity = 400
+xToWorld = 1140
+yToWorld = 800
 xPotionMotion = 700
 yPotionMotion = 460
 xPlayGame = 640
@@ -129,6 +129,7 @@ Send {Click %xCloseGame%, %yCloseGame%}
 sleep 5000
 exitapp
 
-
+F10::
+exitapp
 +Esc:: ;Shift+Escape to exit, try not to use this one unless you aren't in the minigame
 exitapp
