@@ -26,9 +26,9 @@ This script will allow you to automatically farm for Couch Potatoes as well as c
 9. Repeat this entire process until either _F10_ is pressed to end it, or 5 hours pass. If 5 hours have passed, it will close Wizard101 and end the script. (Timer can be changed)
 
 **Before you Start**
-1. You must have a 40% speed mount equipped for this to work, otherwise timings will be off.
+1. **You must have a 40% speed mount equipped for this to work, otherwise timings will be off.**
 2. Make sure you have a deck that is only AOE spells that can one shot these enemies (310 health). Ice and Fire may be slower due to resists and shields.
-3. You will also need to have a house that is not the dorm (It must have a Spiral Door behind you when you teleport there).
+3. You will need to have a house that is not the dorm (It must have a Spiral Door behind you when you teleport there).
 4. I highly recommend emptying your inventory of everything that is not equipped. This will help to prevent your inventory overflowing with drops, and also makes it easier to sell everything after.
 
 
@@ -47,5 +47,6 @@ This script will allow you to automatically farm for Couch Potatoes as well as c
 
 
 **Notes**
- This script has worked mostly fine for overnight farming on my own PC, the only issue being that the game crashes at some point during the night. I added the 5 hour timer to try to avoid the game sitting frozen.
- I have the Avalon Castle Plot, so there is a chance that the Potion Refilling might get stuck when it tries to back into the Spiral Door. I recommend testing this by emptying your mana and potions, then running the script from somewhere other than your house to see if you make it to Bartelby. If you do, then it works fine. If not, adjust the 'toSpiralDoor' variable in Minigame.ahk. Larger if you are not going far enough, smaller if you go to far.
+1. This script has worked mostly fine for overnight farming on my own PC, the only issue being that the game crashes at some point during the night. I added the 5 hour timer to try to avoid the game sitting frozen.
+2. I have the Avalon Castle Plot, so there is a chance that the Potion Refilling might get stuck when it tries to back into the Spiral Door. I recommend testing this by emptying your mana and potions, then running the script from somewhere other than your house to see if you make it to Bartleby. If you do, then it works fine. If not, adjust the 'toSpiralDoor' variable in Minigame.ahk. Larger if you are not going far enough, smaller if you go to far.
+3. If you make it to Bartleby but are not making it to the game sigil, either you didn't equip a 40% mount, or youur load times are longer than 10 seconds. You can increase the 'loadTimeWait' variable in Minigame.ahk. I recommend added at least another 2000 ms.
