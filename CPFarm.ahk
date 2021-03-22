@@ -121,9 +121,6 @@ Loop {
     send {w down}    
     sleep 10
     send {w up}
-    send {s down} 
-    sleep 1
-    send {s up} 
 
     sleep 1000
 }
