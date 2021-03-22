@@ -39,13 +39,13 @@ yContinue = 300
 ; xContinue = 1280
 ; yContinue = 560
 
-
+toSpiralDoor = 600 ;Edit this number if you are not making it to Bartleby when trying to refill potions
 
 ; F12:: ;Don't use this it is for testing only
 
 ;Go from house to game sigil in Wizard City, yes this took took 50 lines
 Send {s Down} 
-sleep 600
+sleep %toSpiralDoor%
 Send {s up} 
 sleep 100
 Send x
@@ -97,8 +97,8 @@ sleep 1000
 Send {Click %xPotionMotion%, %yPotionMotion%}
 sleep 10000
 
-;Play game to potion 3 times, NOTE: change loop number for more or less potions
-loop 3 {
+;Play game to potion 4 times, NOTE: change loop number for more or less potions
+loop 4 {
     Send {Click %xPlayGame%, %yPlayGame%}
     sleep 500
     loop 10 {   ;Go through each column dragging down to a random row and releasing
