@@ -100,7 +100,7 @@ Loop {
         } 
         ;go home, run minigame, back to mark, set new mark, move forward back into range of mobs
         Sleep 10000
-        RunWait C:\Users\ajeho\Desktop\Minigame.ahk
+        RunWait %A_ScriptDir%\Minigame.ahk  
         sleep 1000
         Send {Click %xTpMark%, %yTpMark%}
         sleep 10000
@@ -123,7 +123,7 @@ Loop {
     send {w up}
     send {s down} 
     sleep 1
-    send{s up} 
+    send {s up} 
 
     sleep 1000
 }
