@@ -1,6 +1,9 @@
 # W101CouchPotatoScript
 This script will allow you to automatically farm for Couch Potatoes as well as check for empty mana, then refill it with a potion. If there are no potions left, it will take you to the minigame sigil and play through Potion Motion to refill them, then go back to farming using a mark. 
 
+**You must install AutoHotKey to use this script**
+ Go to https://www.autohotkey.com/ and download the current version.
+
 **HOTKEYS** _Note_: You may need to press the Stop or Close hotkey multiple times. Not sure why, just do it to be safe.
 1. _F9_ = **Start**: Once the script is opened, this will start it running.
 2. _F10_ = **Stop**: This is the Stop key once it is running. This will cause the script to stop making actions, but stay open so you can easily start it again. Use for pauses in farming, like to sell gear or empty inventory.
@@ -32,14 +35,15 @@ This script will allow you to automatically farm for Couch Potatoes as well as c
 **How to Use It**
 1. Download both scripts to the same directory path.
 2. Run Wizard101 in 1280x720 resolution with Fullscreen turned off.
-3. Go to Savarstaad Pass in Grizzleheim and find the Troubled Warriors in the clearing just above the teleporter hub.
-4. On the side closest the teleporter hub, there is a strip of grass you can stand in.
-5. There are two rocks on this strip of grass, stand just to the right of the rightmost rock, facing the large runic rock in the center and place your marker.
-6. Now walk forward until you are in the path of the enemies.
-7. Place your cursor over the middle spell in your deck.
-8. Press _F9_ to start the script.
-9. If you need to pause, press _F10_.
-10. When you are done, or otherwise need to end the script, press _Shift+Esc_.
+3. Open the Script by running it in Windows
+4. Go to Savarstaad Pass in Grizzleheim and find the Troubled Warriors in the clearing just above the teleporter hub.
+5. On the side closest the teleporter hub, there is a strip of grass you can stand in.
+6. There are two rocks on this strip of grass, stand just to the right of the rightmost rock, facing the large runic rock in the center and place your marker.
+7. Now walk forward until you are in the path of the enemies.
+8. Place your cursor over the middle spell in your deck.
+9. Press _F9_ to start the script.
+10. If you need to pause, press _F10_.
+11. When you are done, or otherwise need to end the script, press _Shift+Esc_.
 
 
 **Notes**
