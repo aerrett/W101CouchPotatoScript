@@ -6,10 +6,10 @@
 #SingleInstance, Force
 
 ;1280x720 cursor positions        ;Must use 720p resolution
-xWizCity = 1170
-yWizCity = 400
-xToWorld = 1140
-yToWorld = 800
+xWizCity = 880
+yWizCity = 250
+xToWorld = 860
+yToWorld = 640
 xPotionMotion = 700
 yPotionMotion = 460
 xPlayGame = 640
@@ -49,19 +49,19 @@ sleep %toSpiralDoor%
 Send {s up} 
 sleep 100
 Send x
-sleep 1000
+sleep 10000
 Send {Click %xWizCity%, %yWizCity%}
 sleep 5
 Send {Click %xToWorld%, %yToWorld%}
-sleep 5000
+sleep 10000
 Send {w Down}
 sleep 4000
 Send {w Up}
-sleep 5000
+sleep 10000
 Send {w Down}
 sleep 6000
 Send {w Up}
-sleep 3000
+sleep 10000
 Send {w Down}
 sleep 1500
 Send {w Up}
@@ -122,7 +122,7 @@ loop 4 {
     Send {Click %xCloseGame%, %yCloseGame%}
     sleep 500
     Send {Click %xContinue%, %yContinue%}
-    sleep 2000
+    sleep 4000
 }
 ;Exit game menu
 Send {Click %xCloseGame%, %yCloseGame%}
