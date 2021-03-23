@@ -4,6 +4,8 @@
 ;Script to automatically farm Couch Potatoes by casting spells, then refill mana when it is empty, and call Minigame to refill potions when they are empty
 
 #SingleInstance, Force
+sleep 500
+MsgBox, 4096, Opened Successfully, CPFarm script open`nClose me and press F9 to start, 15
 
 ;Desktop 1280x720       ;Must use 720p resolution
 xMana = 106
@@ -48,10 +50,22 @@ spellbookColor = 0xA84150
 
 ;Press F9 to start, make sure you have set a marker just outside of range of the mobs, facing them, before starting
 F9::
+MsgBox 4097, Starting, Place cursor over spell card and hit 'Space' to start Farming,
+IfMsgBox Cancel, {
+    MsgBox, 4096, Reloading, Reloading script... `nShift+Esc to close, 2
+    Reload
+}
+IfMsgBox timeout, {
+    MsgBox, 4096, Reloading, Reloading script... `nShift+Esc to close, 2
+    Reload
+}
 
-;Script will timeout after 5 hours, closing Wizard101 and exiting the script
-;Comment out line below to remove timeout, or change length (in milliseconds)
-SetTimer, StopAFK, -18000000
+;Script will timeout after 5 hours, closing Wizard101 and letting you know it ended
+;Change length below (in hours)
+timerHours = 5
+timerMilliseconds := timerHours * 3600 * 1000
+;Comment out line below to remove timeout
+SetTimer, StopAFK, -%timerMilliseconds%
 
 ;Hover mouse over card in battle before starting, it will save this position
 MouseGetPos x, y, windId, controlId,
@@ -127,8 +141,14 @@ Loop {
 
 StopAFK: ;when timer runs out, exit Wizard101 and end script
     WinClose, Wizard101,, 2000
+    MsgBox, 4096, Timer Expired, You've been farming for %timerHours% hours!`nYour game has been closed.`nHope you got some Couch Potatoes!,
+    sleep 500
+    MsgBox, 4096, Exited Successfully, CPFarm exited successfully., 5
     exitapp
-F10::Reload ;F10 to stop script without exiting
+F10::
+    MsgBox, 4096, Reloading, Reloading script... `nShift+Esc to close, 2
+    Reload ;F10 to stop script without exiting
 +Esc:: ;Shift+Esc to fully exit script, do it slowly, might need multiple presses
+    MsgBox, 4096, Exited Successfully, CPFarm exited successfully., 5
     exitapp
 return
