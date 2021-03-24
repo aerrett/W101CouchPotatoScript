@@ -47,27 +47,36 @@ spellbookColor = 0xA84150
 ; ySpellbook = 1250
 ; spellbookColor = 0xAC4452
 
+reloading() {
+    MsgBox, 4096, Reloading, Reloading script... `nShift+Esc to close, 2
+    Reload
+    return
+}
+
 
 ;Press F9 to start, make sure you have set a marker just outside of range of the mobs, facing them, before starting
 F9::
-MsgBox 4097, Starting, Place cursor over spell card and hit 'Space' to start Farming,
+MsgBox 4097, Starting, Close this message and click spell card to start farming., 30
 IfMsgBox Cancel, {
-    MsgBox, 4096, Reloading, Reloading script... `nShift+Esc to close, 2
-    Reload
+    reloading()
 }
 IfMsgBox timeout, {
-    MsgBox, 4096, Reloading, Reloading script... `nShift+Esc to close, 2
-    Reload
+    reloading()
 }
 
-;Script will timeout after 5 hours, closing Wizard101 and letting you know it ended
+;Script will timeout after 8 hours, closing Wizard101 and letting you know it ended
 ;Change length below (in hours)
-timerHours = 5
+timerHours = 6
 timerMilliseconds := timerHours * 3600 * 1000
 ;Comment out line below to remove timeout
 SetTimer, StopAFK, -%timerMilliseconds%
 
 ;Hover mouse over card in battle before starting, it will save this position
+KeyWait, LButton, D T30
+if ErrorLevel {
+    reloading()
+}
+sleep 100
 MouseGetPos x, y, windId, controlId,
 Loop {
     potsEmpty = 0 ;Bool for empty potions
@@ -132,9 +141,9 @@ Loop {
     send {Click %x% %y%}
     sleep 100
     ;auto-move to end invincibility
-    send {w down}    
+    send {a down}    
     sleep 10
-    send {w up}
+    send {a up}
 
     sleep 1000
 }
@@ -146,8 +155,7 @@ StopAFK: ;when timer runs out, exit Wizard101 and end script
     MsgBox, 4096, Exited Successfully, CPFarm exited successfully., 5
     exitapp
 F10::
-    MsgBox, 4096, Reloading, Reloading script... `nShift+Esc to close, 2
-    Reload ;F10 to stop script without exiting
+    reloading()
 +Esc:: ;Shift+Esc to fully exit script, do it slowly, might need multiple presses
     MsgBox, 4096, Exited Successfully, CPFarm exited successfully., 5
     exitapp

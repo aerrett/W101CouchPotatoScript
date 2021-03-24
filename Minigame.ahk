@@ -92,6 +92,8 @@ sleep 1000
 Send {w Up}
 sleep 1000
 
+
+; F8:: ;Also for testing
 ;Start minigame
 Send x
 sleep 1000
@@ -103,8 +105,8 @@ loop 4 {
     Send {Click %xPlayGame%, %yPlayGame%}
     sleep 500
     loop 10 {   ;Go through each column dragging down to a random row and releasing
-        xStart = xDefault
-        yStart = yDefault
+        xStart = 460
+        yStart = 240
         
         loop 7 {
             Random yMultiply, 1, 5 
