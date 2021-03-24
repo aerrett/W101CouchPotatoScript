@@ -60,20 +60,20 @@ MsgBox 4097, Starting, Close this message and click spell card to start farming.
 IfMsgBox Cancel, {
     reloading()
 }
-IfMsgBox timeout, {
+IfMsgBox timeout, { ;30 second timeout
     reloading()
 }
 
-;Script will timeout after 8 hours, closing Wizard101 and letting you know it ended
+;Script will timeout after 6 hours, closing Wizard101 and letting you know it ended
 ;Change length below (in hours)
 timerHours = 6
 timerMilliseconds := timerHours * 3600 * 1000
 ;Comment out line below to remove timeout
 SetTimer, StopAFK, -%timerMilliseconds%
 
-;Hover mouse over card in battle before starting, it will save this position
+;Click on card in battle to start, it will save this position
 KeyWait, LButton, D T30
-if ErrorLevel {
+if ErrorLevel { ;If there is no click after 30 seconds, will reload and not start
     reloading()
 }
 sleep 100
@@ -154,7 +154,7 @@ StopAFK: ;when timer runs out, exit Wizard101 and end script
     sleep 500
     MsgBox, 4096, Exited Successfully, CPFarm exited successfully., 5
     exitapp
-F10::
+F10:: ;F10 to reload the script, stopping its actions but allowing it to be restarted with F9
     reloading()
 +Esc:: ;Shift+Esc to fully exit script, do it slowly, might need multiple presses
     MsgBox, 4096, Exited Successfully, CPFarm exited successfully., 5
